@@ -1,0 +1,232 @@
+<div class="container">
+  <h1 class="lsh-page-title">LASHLY</h1>
+</div>
+
+<!-- Page header -->
+<div class="lsh-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md"></div>
+      <div class="col-xs-12 col-md">
+        <div class="lsh-header-content">
+          <h1>
+            LASHLY IS COMING SOON
+          </h1>
+          <h2>
+            Your Solution For Overpriced Lashes Delivered To Your Door Monthly
+          </h2>
+          <h3 style="line-height: 1.375;">
+            Help us spread the word and redeem fabulous,<br>free rewards along the way.
+          </h3>
+          
+          <div>
+            <div class="form-wrap clearfix <%= "ended" if Rails.application.config.ended %>" style="text-align: center;">
+              <% if Rails.application.config.ended %>
+                <%= render "users/campaign_ended" %>
+              <% else %>
+                <%= render "users/campaign_ongoing" %>
+              <% end %>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Page header -->
+
+
+
+
+
+<!-- Section 2: How to -->
+<section id="lsh-how-to-section" class="lsh-section">
+  <div class="container">
+    <h1 class="lsh-section-title">
+      Here's How To Get Involved
+    </h1>
+    <div class="lsh-dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  
+  <div><br><br><br></div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- lsh-step 1 -->
+        <div class="lsh-how-to-step">
+          <div class="lsh-image">
+            <img src="assets/home/signup.jpg">
+          </div>
+          <h2 class="lsh-title">
+            SIGN UP INSTANTLY
+          </h2>
+          <p class="lsh-detail">
+            Signing up is easy. Just enter your email address to get started.
+          </p>
+        </div>
+        <!-- /lsh-step 1 -->
+      </div>
+      <div class="col">
+        <!-- lsh-step 2 -->
+        <div class="lsh-how-to-step">
+          <div class="lsh-image">
+            <img src="assets/home/invite.jpg">
+          </div>
+          <h2 class="lsh-title">
+            INVITE FRIENDS
+          </h2>
+          <p class="lsh-detail">
+            Simply grab your referral link and start sharing with friends.
+          </p>
+        </div>
+        <!-- /lsh-step 2 -->
+      </div>
+      <div class="col">
+        <!-- lsh-step 3 -->
+        <div class="lsh-how-to-step">
+          <div class="lsh-image">
+            <img src="assets/home/redeem.jpg">
+          </div>
+          <h2 class="lsh-title">
+            REDEEM REWARDS
+          </h2>
+          <p class="lsh-detail">
+            We'll keep track of everyone who signs up using your link.
+          </p>
+        </div>
+        <!-- /lsh-step 3 -->
+      </div>
+    </div>
+  </div>
+  
+</section>
+<!-- /Section 2: How to -->
+
+<!-- Section 3: Packages -->
+<section id="lsh-packages-section" class="lsh-section">
+  <div class="container">
+    <h1 class="lsh-section-title">
+      Get Free Perks For Your Referrals
+    </h1>
+    <div class="lsh-dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  
+  <div><br><br><br></div>
+  
+  <div class="container">
+    <div class="row align-items-end">
+      <div class="col-xs-12 col-md">
+        <!-- Package 1 -->
+        <div class="lsh-package">
+          <div class="lsh-image">
+            <img src="assets/home/popsocket.jpg" style="width: 35%;">
+          </div>
+          <h2 class="lsh-title">
+            POP<br>SOCKET
+          </h2>
+          <h4 class="lsh-sub-title">Refer 5 friends</h4>
+          <p class="lsh-detail">
+            Refer 5 friends and get a free pop socket phone holder.
+          </p>
+        </div>
+        <!-- /Package 1 -->
+      </div>
+      
+      <div class="col-xs-12 col-md">
+        <!-- Package 2 -->
+        <div class="lsh-package">
+          <div class="lsh-image">
+            <img src="assets/home/1month.jpg">
+          </div>
+          <h2 class="lsh-title">
+            1 MONTH SUBSCRIPTION
+          </h2>
+          <h4 class="lsh-sub-title">Refer 10 friends</h4>
+          <p class="lsh-detail">
+            Refer 10 friends and get a free 1 month subscription.
+          </p>
+        </div>
+        <!-- /Package 2 -->
+      </div>
+      
+      <div class="col-xs-12 col-md">
+        <!-- Package 3 -->
+        <div class="lsh-package">
+          <div class="lsh-image">
+            <img src="assets/home/3month.jpg">
+          </div>
+          <h2 class="lsh-title">
+            3 MONTH SUBSCRIPTION
+          </h2>
+          <h4 class="lsh-sub-title">Refer 25 friends</h4>
+          <p class="lsh-detail">
+            Refer 25 friends and get a free 3 months subscription.
+          </p>
+        </div>
+        <!-- /Package 3 -->
+      </div>
+      
+      <div class="col-xs-12 col-md">
+        <!-- Package 4 -->
+        <div class="lsh-package">
+          <div class="lsh-image">
+            <img src="assets/home/6month.jpg" style="width: 80%;">
+          </div>
+          <h2 class="lsh-title">
+            6 MONTH SUBSCRIPTION
+          </h2>
+          <h4 class="lsh-sub-title">Refer 50 friends</h4>
+          <p class="lsh-detail">
+            Refer 50 friends and get a free 6 months subscription.
+          </p>
+        </div>
+        <!-- /Package 4 -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Section 3: Packages -->
+
+
+<!--  Footer  -->
+<footer id="lsh-page-footer">
+  <div class="container">
+    <div style="text-align: center">
+      <img src="assets/home/foot-logo.png" class="lsh-logo"></img>
+    </div>
+    <p class="lsh-message">
+      The Lashly brand was founded to create a truly convenient experience of buying and
+      wearing false eyelashes. Our lashes are such high quality you'll want to
+      keep reusing them, but are so affordable you wont have to.
+    </p>
+    <p class="lsh-message-bold">
+      Get involved today and become a key member in helping Lashly launch to the world.
+    </p>
+    
+    <div class="lsh-actions">
+      <button class="lsh-button">DON'T MISS OUT</button>
+    </div>
+  </div>
+</footer>
+<!--  /Footer  -->
+
+
+<!-- Copyrights -->
+<div id="lsh-copyrights">
+  <div class="container">
+    <p class="lsh-copyrights-msg">
+      Copyright &copy; 2018 Lashly Co. All Rights Reserved. Privacy Policy // Contact Us
+    </p>
+  </div>
+</div>
+<!-- /Copyrights -->

@@ -1,0 +1,96 @@
+
+
+.lsh-count-container{
+    
+    text-align: center;
+    position: relative;
+    
+    .lsh-count{
+        
+        display: inline-block;
+        width: 2.2em;
+        height: 2.2em;
+        line-height: 2.2em;
+        text-align: center;
+        background-color: #dddddd;
+        border: 1px solid #aaaaaa;
+        border-radius: 2.2em;
+        font-weight: 700;
+        
+        &.lsh-selected{
+            
+            background-color: #ec4485;
+            border: 1px solid #ec4485;
+            color: #ffffff;
+        }
+    }
+    
+    .lsh-tooltip{
+        
+        position: absolute;
+        bottom: 1.1em;
+        padding: 0.5em;
+        background-color: #ffffff;
+        border: 1px solid #eeeeee;
+        border-radius: 5px;
+        box-shadow: rgba(0,0,0,0.15) 0px 0px 8px;
+        display: none;
+    }
+    
+    &:hover{
+        
+        .lsh-tooltip{
+            
+            display: block;
+        }
+    }
+}
+
+.lsh-progress{
+    
+    height: 5px;
+    background-color: #cccccc;
+    margin: 1.5em 0;
+    
+    &.lsh-done{
+        
+        background-color: #ec4485;
+    }
+}
+
+.lsh-copy-link-col{
+    
+    font-size: 1.1em;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    white-space: nowrap;
+    line-height: 1;
+    background-color: #ffffff;
+    color: #333333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lsh-social-links{
+    
+    text-align: center;
+    
+    a{
+        text-decoration: none;
+        margin-right: 1em;
+        
+        &:last-child{
+            
+            margin-right: 0;
+        }
+    }
+}
+
+@media all and (max-width: 768px){
+    
+    .lsh-progress{
+        
+        width: 5px;
+        height: 100%;
+    }
+}

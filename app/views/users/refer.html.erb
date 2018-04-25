@@ -1,0 +1,218 @@
+<div class="container">
+  <h1 class="lsh-page-title">LASHLY</h1>
+</div>
+
+<!-- Page header -->
+<div class="lsh-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="lsh-header-content">
+          <h2 style="font-weight: 400;color: #263e68;">Don't Leave Your Friends Behind</h2>
+          <h1 style="line-height: 1.375;color: #ec4485;">
+            INVITE FRIENDS &amp;<br> EARN FREE REWARDS
+          </h1>
+          <h3 style="line-height: 1.375;">
+            Share your unique link via email, Facebook, Instagram, or Twitter and earn free Lashly
+            rewards for each friend who signs up. It's that simple!
+          </h3>
+          
+          <div><br><br></div>
+          
+          <div class="row">
+            <div class="col-xs-12 col-md-auto lsh-copy-link-col" style="background-color: #0ca18e; color: #ffffff;">
+              COPY THIS LINK
+            </div>
+            <div class="col-xs-12 col-md lsh-copy-link-col">
+              <%= root_url %>?ref=<%= @user.referral_code %>
+            </div>
+          </div>
+          
+          <div><br></div>
+          
+          <div>
+            <h2 style="text-align: center;margin: 0;color: #263e68;">SHARE WITH FRIENDS</h2>
+            
+            <div><br></div>
+            
+            <div>
+              <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
+              <div class="lsh-social-links">
+                <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank">
+                  <img src="assets/home/fb-icon.png"></img>
+                </a>
+                <a href="#">
+                  <img src="assets/home/insta-icon.png"></img>
+                </a>
+                <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank">
+                  <img src="assets/home/twitter-icon.png"></img>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Page header -->
+
+
+
+<%
+  referrals_count = @user.referrals.count
+
+  stops = User::REFERRAL_STEPS
+
+  found = nil
+
+  stops.reverse_each { |stop|
+    if stop["count"] <= referrals_count and !found
+      stop["selected"] = true
+      found = stop
+    else
+      stop["selected"] = false
+    end
+  }
+%>
+
+
+
+<!-- Content section -->
+<section id="lsh-content-section" class="lsh-section">
+  <div class="container">
+    <h1 class="lsh-section-title" style="text-align: center;">
+      Here's How You Are Doing So Far
+    </h1>
+    <div class="lsh-dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  
+  <div><br><br><br><br></div>
+  
+  
+  
+  <div class="container">
+    
+    <div class="row">
+      <div class="col col-md-12">
+        <div class="row align-items-center">
+          <div class="col-md">
+            <h3>FRIENDS JOINED</h3>
+          </div>
+          
+          <% stops.each do |stop| %>
+          
+            <div class="col-md">
+              <div class="lsh-count-container">
+                <span class="lsh-count <% if stop["selected"] %>lsh-selected<% end %>"><%= stop["count"] %></span>
+                
+                <div class="lsh-tooltip">
+                  <img src="<%= stop["image"] %>" height="254">
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+          
+        </div>
+      </div>
+      <div class="col-auto col-md-12">
+        <div class="row no-gutters">
+          <div class="col-12 col-md">
+            <div class="lsh-progress lsh-done"></div>
+          </div>
+          
+          <% stops.each do |stop| %>
+          
+            <div class="col-12 col-md">
+              <div class="lsh-progress <% if stop["selected"] %>lsh-done<% end %>"></div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+      <div class="col col-md-12">
+        <div class="row align-items-center">
+          <div class="col">
+            <h3>LASHLY REWARD</h3>
+          </div>
+          
+          
+          <% stops.each do |stop| %>
+            <div class="col">
+              <h3 style="text-align: center;"><%= stop["html"].html_safe %></h3>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div><br><br><br></div>
+  
+  
+  
+  
+  <div class="container" style="text-align: center">
+    
+    <%
+      words = ''
+      if referrals_count == 1
+        words = 'friend has'
+      else
+        words = 'friends have'
+      end
+    %>
+
+    <% if referrals_count == 0 %>
+      <h4 class="place brandon"><b>No</b> friends have joined...Yet!</h4>
+    <% else %>
+      <h4 class="place brandon"><b><%= referrals_count %></b> <%= words %> joined</h4>
+    <% end %>
+    <p class="check brandon">Keep checking back and go invite some friends!</p>
+  </div>
+  
+  
+  
+  
+  
+</section>
+<!-- /Content section -->
+
+
+
+<!--  Footer  -->
+<footer id="lsh-page-footer">
+  <div class="container">
+    <div style="text-align: center">
+      <img src="assets/home/foot-logo.png" class="lsh-logo"></img>
+    </div>
+    <p class="lsh-message">
+      The Lashly brand was founded to create a truly convenient experience of buying and
+      wearing false eyelashes. Our lashes are such high quality you'll want to
+      keep reusing them, but are so affordable you wont have to.
+    </p>
+    <p class="lsh-message-bold">
+      Get involved today and become a key member in helping Lashly launch to the world.
+    </p>
+  </div>
+</footer>
+<!--  /Footer  -->
+
+
+<!-- Copyrights -->
+<div id="lsh-copyrights">
+  <div class="container">
+    <p class="lsh-copyrights-msg">
+      Copyright &copy; 2018 Lashly Co. All Rights Reserved. Privacy Policy // Contact Us
+    </p>
+  </div>
+</div>
+<!-- /Copyrights -->

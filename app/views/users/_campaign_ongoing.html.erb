@@ -1,0 +1,6 @@
+<div class="key"></div>
+<%= form_for @user, :url => { :action => "create" } do |f| %>
+  <%= f.text_field :email, :placeholder => "Enter primary email...", :class => "email brandon lsh-input" %>
+  <br>
+  <input class="lsh-button" name="commit" type="submit" value="SIGN UP TODAY" />
+<% end %>
